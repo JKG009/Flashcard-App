@@ -36,7 +36,7 @@ export const Dropdown = styled.select`
 
 export const Close = styled.div`
     font-size: 1.5em;
-    padding: 0.01em 0.2em;
+    padding: 0.01em 0.3em;
     margin-left: 0.3em;
     border: black 2px solid;
     border-radius: 10%;
@@ -48,7 +48,7 @@ export const Close = styled.div`
     transition-duration: 0.4s;
 
     :hover {
-        background-color: rgba(168, 179, 199, 0.7);
+        background-color: rgba(168, 179, 199, 0.6);
     }
 
     .tooltiptext {

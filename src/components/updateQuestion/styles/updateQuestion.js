@@ -10,12 +10,12 @@ export const Container = styled.form`
 
 export const Title = styled.h3`
     padding: 1em 0.7em;
-    margin: 0.5em 0.1em;
+    margin: 1em 0.1em 0;
     text-align: center;
     
-    @media (max-height: 800px) {
+    @media (max-height: 700px) {
         padding: 0.6em 0.3em;
-        margin: 0.5em 0;
+        margin: 0.5em 0 0;
         font-size: 13px;
     }
 `
@@ -42,6 +42,10 @@ export const Answer = styled.textarea`
     box-sizing: border-box;
     resize: none;
     
+    :focus {
+        outline: black solid 1px;
+    }
+
     :last-of-type {
         margin-bottom: 2em;
     }

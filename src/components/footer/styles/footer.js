@@ -20,7 +20,7 @@ export const Button = styled.button`
     background: rgb(211,211,211);
     border-radius: 5%;
     
-    :hover:enabled {
+    :active, :hover:enabled {
         background: none;
         border: 2px solid grey;
         color: white;

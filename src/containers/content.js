@@ -80,7 +80,7 @@ export default function ContentContainer() {
                             key={index + 1}
                             flashcard={flashcard}
                             >
-                            </Content.Flashcard>
+                        </Content.Flashcard>
                     ))}
                     </Content.FlashcardContainer>
                     <Content.FlashcardDotContainer>
