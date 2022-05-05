@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import UpdateQuestion from '../components/updateQuestion'
 import { useTopic } from "../components/context/TopicContext"
 
 export default function UpdateQuestionContainer() {
     const {topics} = useTopic()
-    const isMounted = useRef(false)
 
     const [topicName, setTopicName] = useState("")
     const [newTopicName, setNewTopicName] = useState("")
@@ -29,16 +28,14 @@ export default function UpdateQuestionContainer() {
     }
 
     useEffect(() => {
-        if (isMounted.current) {
-            if (newTopicName) {
-                localStorage.setItem(newTopicName, JSON.stringify([newCard]))
-            } else {
+        if (newTopicName) {
+            localStorage.setItem(newTopicName, JSON.stringify([newCard]))
+            return
+        } 
+        if (submitted) {
             myTopic.push(newCard)
             localStorage.setItem(topicName, JSON.stringify(myTopic))
-            }
-        } else {
-            isMounted.current = true;
-        }        
+        }
     }, [submitted])
     
     return (

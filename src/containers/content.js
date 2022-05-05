@@ -15,6 +15,7 @@ export default function ContentContainer() {
     const handleClick = (n) => {
         setCardDisplayed(n)
     }
+
     const deleteTopicClick = () => {
         if (selectedTopic) {
             localStorage.removeItem(selectedTopic)
@@ -73,6 +74,10 @@ export default function ContentContainer() {
                                 localStorage.setItem(selectedTopic, JSON.stringify(flashcardsFromStorage))
                                 if (index === renderedFlashcards.length - 1) {
                                     setCardDisplayed(cardDisplayed - 1)
+                                }
+                                if (flashcardsFromStorage.length < 1) {
+                                    localStorage.removeItem(selectedTopic);
+                                    document.location.reload(true);
                                 }
                             }}
                             onClick={() => setFlip(!flip)}
